@@ -1,43 +1,77 @@
 <?php
 
-// class Person
-// {
+// class person{
 //     public $name;
-//     public $sport;
+//     public $family;
 
-//     public function play()
-//     {
-//         echo $this->name . "   " . "plays" . "  " . $this->sport;
-//     }
+//     const age=22;
+
+//     public function showFullName(){
+//         echo $this->name." ".$this->family." is ".person::age;
+//         // echo $this->name." ".$this->family." is ".self::age;
+//     } 
 // }
 
-// $man = new Person();
-// $man->name = "ali";
-// $man->sport = "volleyball";
-// $man->play();
-// echo "<br>";
-// $man = new Person();
-// $man->name = "ali";
-// $man->sport = "volleyball";
-// $man->play();
+// $ali=new person();
+// $ali->name="ali";
+// $ali->family="farjamy";
 
-class pet{
-
-public $voice;
-
-public function myVoice(){
-    echo $this->voice;
-}
-
-}
-
-$cat=new pet();
-
-$cat->voice="<script> alert('meow')</script>";
-$cat->myVoice();
-
+// $ali->showFullName();
 
 // we could create two objdect with same name but we couldnt create two property with same name ;
+
+// class person{
+//     public $name;
+//     public $family;
+
+//     const age=22;
+
+//     public function showFullName(){
+//         echo $this->name." ".$this->family." is ".person::age;
+//         // echo $this->name." ".$this->family." is ".self::age;
+//     } 
+// }
+
+// echo person::age;
+
+
+
+
+
+// class person{
+//     public $name;
+//     public $family;
+
+//     const age=22;
+
+//     public function showFullName(){
+//         echo $this->name." ".$this->family." is ".person::age;
+//         // echo $this->name." ".$this->family." is ".self::age;
+//     } 
+// }
+
+// $ali=new person();
+// $ali->name="ali";
+// $ali->family="farjamy";
+
+// echo $ali::age;
+
+
+class Car{
+    static $number=0;
+
+    static function CarNumber(){
+        self::$number++;
+    }
+}
+
+echo Car::$number;
+Car::CarNumber();
+echo Car::$number;
+Car::CarNumber();
+echo Car::$number;
+
+
 
 ?>
 
