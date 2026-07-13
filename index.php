@@ -1,8 +1,14 @@
 <?php
 
+// class A{
+//     public $color="blue";
+// }
 class A{
-    public $color="blue";
+    protected $color="blue";
 }
+// class A{
+//     private $color="blue";
+// }
 
 class B extends A{
     public $age=22;
