@@ -1,26 +1,24 @@
 <?php
 
-class Bank{
-    private $balance;
-    public function Deposit($amount){
-        $this->balance+=$amount;
+class Test{
+    private $name;
+    private $age;
+    function SetName($name){
+        $this->name=$name;
     }
-    public function Withdraw($amount){
-        if($this->balance>$amount){
-            $this->balance-=$amount;
-        }else{
-            throw new Exception("you dont have such money!");
-        }
+    function SetAge($age){
+        $this->age=$age;
     }
-    public function ShowBalance(){
-        return $this->balance;
+    function GetName(){
+        return $this->name;
+    }
+    function GetAge(){
+        return $this->age;
     }
 }
-$ali=new Bank();
-$ali->Deposit(1500);
-echo $ali->ShowBalance();
+$ali=new Test();
+$ali->SetName("ali");
+$ali->SetAge("22");
+echo $ali->GetName();
 echo "<br>";
-$ali->Withdraw(1000);
-echo $ali->ShowBalance();
-$ali->Withdraw(1600);
-
+echo $ali->GetAge();
