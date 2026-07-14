@@ -1,24 +1,20 @@
 <?php
 
-class Test{
-    private $name;
-    private $age;
-    function SetName($name){
-        $this->name=$name;
-    }
-    function SetAge($age){
-        $this->age=$age;
-    }
-    function GetName(){
-        return $this->name;
-    }
-    function GetAge(){
-        return $this->age;
+// final class Base{
+
+// }
+// class Child extends Base{
+    
+// }
+class Base{
+   final public function Test(){
+    return "hello world";
+   }
+}
+class Child extends Base{
+    public function Test(){
+        return "child class";
     }
 }
-$ali=new Test();
-$ali->SetName("ali");
-$ali->SetAge("22");
-echo $ali->GetName();
-echo "<br>";
-echo $ali->GetAge();
+$test=new Child();
+echo $test->Test();
