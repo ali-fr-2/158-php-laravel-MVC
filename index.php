@@ -1,16 +1,24 @@
 <?php
 
-class Person
-{
-    function showinfo()
-    {
-        echo "hello world";
+class Calculator {
+    static function add($a,$b){
+        return $a+$b;
     }
-    function __destruct()
-    {
-        echo "this is destruct ";
+        static function subtract($a,$b){
+        return $a-$b;
+    }
+        static function multiply($a,$b){
+        return $a*$b;
+    }
+        static function divide($a,$b){
+            if($b==0){
+                return "cannot divide by zero";
+            }
+        return $a/$b;
     }
 }
-$ali=new Person();
-// die();
-unset($ali);
+$result=Calculator::divide(20,10);
+echo $result;
+echo "<br/>";
+$cal=new Calculator();
+echo $cal::subtract(50,10.5);
