@@ -1,20 +1,22 @@
 <?php
 
-// final class Base{
+abstract class abclass
+{
+    protected $name;
+    abstract function greet($greet);
 
-// }
-// class Child extends Base{
-    
-// }
-class Base{
-   final public function Test(){
-    return "hello world";
-   }
-}
-class Child extends Base{
-    public function Test(){
-        return "child class";
+    public function setname($name)
+    {
+        $this->name = $name;
     }
 }
-$test=new Child();
-echo $test->Test();
+
+class child extends abclass
+{
+    function greet($greet) {
+        return $greet." ".$this->name;
+    }
+}
+$obj=new child();
+$obj->setname("ali");
+echo $obj->greet("welcome");
