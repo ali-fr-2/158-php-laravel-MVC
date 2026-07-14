@@ -1,24 +1,26 @@
 <?php
 
-class Calculator {
-    static function add($a,$b){
-        return $a+$b;
+class Bank{
+    private $balance;
+    public function Deposit($amount){
+        $this->balance+=$amount;
     }
-        static function subtract($a,$b){
-        return $a-$b;
+    public function Withdraw($amount){
+        if($this->balance>$amount){
+            $this->balance-=$amount;
+        }else{
+            throw new Exception("you dont have such money!");
+        }
     }
-        static function multiply($a,$b){
-        return $a*$b;
-    }
-        static function divide($a,$b){
-            if($b==0){
-                return "cannot divide by zero";
-            }
-        return $a/$b;
+    public function ShowBalance(){
+        return $this->balance;
     }
 }
-$result=Calculator::divide(20,10);
-echo $result;
-echo "<br/>";
-$cal=new Calculator();
-echo $cal::subtract(50,10.5);
+$ali=new Bank();
+$ali->Deposit(1500);
+echo $ali->ShowBalance();
+echo "<br>";
+$ali->Withdraw(1000);
+echo $ali->ShowBalance();
+$ali->Withdraw(1600);
+
