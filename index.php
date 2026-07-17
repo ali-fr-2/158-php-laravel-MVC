@@ -1,67 +1,38 @@
 <?php
-
-// class ParentClass
-// {
-//     public function mymethod()
-//     {
-//         echo "method from parentclass";          //3
-//     }
-// }
-// trait NameTrait
-// {
-//     public function mymethod()
-//     {
-//         echo "method from trait";               //2
-//     }
-// }
-
-// class ChildClass extends ParentClass
-// {
-//     use NameTrait;
-//     public function mymethod()
-//     {
-//         echo "method from child class";        // 1
-//     }
-// }
-
-// $obj = new ChildClass();
-// $obj->mymethod();
+namespace x;
+class myclass
+{
+    public function my()
+    {
+        echo __CLASS__;
+        echo "<br/>";
+        echo  __FILE__;
+        echo "<br/>";
+        echo __DIR__;
+        echo "<br/>";
+        echo __LINE__;
+        echo "<br/>";
+        echo __FUNCTION__;
+        echo "<br/>";
+        echo __METHOD__;
+        echo "<br/>";
+        echo __NAMESPACE__;
+        echo "<br/>";
 
 
-
-// trait trait1{
-//         public function mymethod()
-//     {
-//         echo "method from trait1";             
-//     }
-// }
-// trait trait2{
-//         public function mymethod()
-//     {
-//         echo "method from trait2";             
-//     }
-// }
-
-// class childclass {
-//     use trait1, trait2 {
-//         trait2::mymethod insteadof trait1;  // اولویت با trait2
-//     }
-// }
-
-// $obj = new childclass();
-// $obj->mymethod(); 
-
-trait nametrait1{
-    private function test(){
-        echo "mytest";
-    }
-}
-class child{
-    use nametrait1 {
-        nametrait1::test as public;
-        nametrait1::test as public T;
     }
 }
 
-$obj=new child();
-$obj->T();
+$obj = new myclass();
+$obj->my();
+
+trait mytrait{
+    public function traitfunc(){
+        echo __TRAIT__;
+    }
+}
+class tratiuse{
+    use mytrait;
+}
+$traitobj=new tratiuse();
+$traitobj->traitfunc();
