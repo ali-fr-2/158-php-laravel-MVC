@@ -1,11 +1,28 @@
 <?php 
-require "./test.php";
-require "./test2.php";
 
-$test=new test\Test();
-$test->test();
-echo "<br/>";
-$x=new test2\Test();
-$x->test();
+trait traitname{
+    private $name;
+
+    public function showname(){
+        echo "hello world";
+    }
+}
+
+trait traitname2{
+    private $name;
+
+    public function showname2(){
+        echo "ali";
+    }
+}
+
+class usetrait{
+    use traitname;
+    use traitname2;
+}
+
+$ali=new usetrait();
+$ali->showname2();
+
 
 ?>
