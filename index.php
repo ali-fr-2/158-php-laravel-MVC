@@ -1,10 +1,11 @@
 <?php 
-require "autoloading.php" ;
+require "./test.php";
+require "./test2.php";
 
-$test=new Test();
+$test=new test\Test();
 $test->test();
 echo "<br/>";
-$x=new Test2();
-$x->test2();
+$x=new test2\Test();
+$x->test();
 
 ?>
